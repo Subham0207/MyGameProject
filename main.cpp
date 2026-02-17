@@ -1,0 +1,15 @@
+#include<Editor.hpp>
+#include <string>
+
+#ifndef GLITTER_ENGINE
+#error GLITTER_ENGINE is not defined for this file/target
+#endif
+
+int main()
+{
+    auto editor = new Editor();
+    std::string engine_root = GLITTER_ENGINE;
+    std::string project_root = CMAKE_ROOT_DIR;
+    editor->openEditor(engine_root, project_root);
+    return 0;
+}

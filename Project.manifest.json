@@ -1,0 +1,14 @@
+{
+        "engineVersion": "0.1.0",
+        "projectName": "myApp18",
+        "projectId": "a3a355a0-7bd3-4251-97ce-1f395a6454f0",
+        "mounts": {
+            "assets": "Assets/",
+            "scenes": "Levels/",
+            "config": "Config/",
+            "cache": "Library/"
+        },
+        "defaultLevel": "Levels/fd710a17-fe08-4ced-8e1d-8536cbce3503",
+        "plugins": []
+        }
+        
