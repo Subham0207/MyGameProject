@@ -64,20 +64,20 @@ void WarriorAIController::OnTick(float deltaTime)
         // Not on the path yet. So, go to first point.
         if(currentPatrolPointIndex == -1)
         {
-            std::cout << "Moving to first point" << std::endl;
+            // std::cout << "Moving to first point" << std::endl;
             nextPatrolPointIndex = 0;
         }
         else 
         {
-            std::cout << "Deciding direction on path..." << std::endl;
+            // std::cout << "Deciding direction on path..." << std::endl;
             if(currentPatrolPointIndex == 0)
             {
-                std::cout << "..Moving forward on path" << std::endl;
+                // std::cout << "..Moving forward on path" << std::endl;
                 isMovingForwardOnPatrolPath = true;
             }
             if(currentPatrolPointIndex == patrolPoints.size() - 1)
             {
-                std::cout << "..Moving backwards on path" << std::endl;
+                // std::cout << "..Moving backwards on path" << std::endl;
                 isMovingForwardOnPatrolPath =  false;
             }
 
@@ -96,13 +96,13 @@ void WarriorAIController::OnTick(float deltaTime)
                     } - currentCharacterPosition) < 1.0f
             )
             {
-                std::cout << "Deciding where to go next..." << std::endl;
+                // std::cout << "Deciding where to go next..." << std::endl;
                 nextPatrolPointIndex = isMovingForwardOnPatrolPath ? currentPatrolPointIndex + 1: currentPatrolPointIndex - 1;
                 pathGenerated = false;
             }
         }
         
-        std::cout << "Moving to next position " << nextPatrolPointIndex << std::endl;
+        // std::cout << "Moving to next position " << nextPatrolPointIndex << std::endl;
         this->moveTo(patrolPoints[nextPatrolPointIndex]);
         currentPatrolPointIndex = nextPatrolPointIndex;
     }
