@@ -44,9 +44,9 @@ void WarriorStatemachine::onStart()
     locomotionBlendspace = new BlendSpace2D("character_blendspace");
     locomotionState->assignBlendspace(locomotionBlendspace);
 
-    std::string walkLeft = "7e21d294-3ab3-4539-984d-ab3c78427e1b";
+    std::string walkLeft = "87630ef7-2a72-4b03-99e0-3e194fa8a56f";
     std::string idle = "fb3ddbdc-7e68-4cc1-8ae0-d461eda1552a";
-    std::string walkRight = "87630ef7-2a72-4b03-99e0-3e194fa8a56f";
+    std::string walkRight = "7e21d294-3ab3-4539-984d-ab3c78427e1b";
     std::string walkBackwards = "4865f2b1-36a6-4d9c-8c84-115ac2adf3fb";
     std::string walkFront = "15943860-1128-4f18-9481-64d26d64d062";
     std::string running = "e94b6c8f-c8f8-4302-a57e-6eb5d292c7fd";
