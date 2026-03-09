@@ -1,5 +1,7 @@
 .idea/
-Assets/
+Assets/**
+!Assets/
+!Assets/**/*.meta.json
 
 build/
 EngineAPI/

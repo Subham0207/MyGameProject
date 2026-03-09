@@ -1,0 +1,8 @@
+{
+    "guid": "16d173f4-ef10-4ef2-8e54-e4af299ad2fb",
+    "type": "characterprefab",
+    "version": "0.1",
+    "content": {
+        "relative_path": "PlayerCharacter.characterprefab"
+    }
+}
