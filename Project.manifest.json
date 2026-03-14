@@ -1,14 +1,14 @@
 {
-        "engineVersion": "0.1.0",
-        "projectName": "EngineTechDemo",
-        "projectId": "99a0052a-1bf1-4e3f-a8b4-993eb245a990",
-        "mounts": {
-            "assets": "Assets/",
-            "scenes": "Levels/",
-            "config": "Config/",
-            "cache": "Library/"
-        },
-        "defaultLevel": "Levels/4a744cda-2be0-478f-878a-5b4aaf526889",
-        "plugins": []
-        }
-        
+    "version": "0.1.0",
+    "name": "EngineTechDemo",
+    "id": "99a0052a-1bf1-4e3f-a8b4-993eb245a990",
+    "development": {
+        "engineDir": "E:/OpenGL/Bins/glitterEngineReleaseBin/bin",
+        "projectDir": "../../"
+    },
+    "mounts": {
+        "assets": "Assets/",
+        "levels": "Levels/"
+    },
+    "entryLevel": "4a744cda-2be0-478f-878a-5b4aaf526889.meta.json"
+}

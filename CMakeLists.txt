@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 #set path to engine install directory
-set(ENGINE_LOC "")
+set(ENGINE_LOC "E:/OpenGL/Bins/glitterEngineReleaseBin")
 
 if(MSVC)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
@@ -56,6 +56,12 @@ target_compile_definitions(EngineTechDemo  PRIVATE
     CMAKE_ROOT_DIR=\"${CMAKE_SOURCE_DIR}\"
 )
 
+add_custom_command(TARGET EngineTechDemo POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy
+          "${CMAKE_SOURCE_DIR}/Project.manifest.json"
+          "$<TARGET_FILE_DIR:EngineTechDemo>/Project.manifest.json"
+)
+
 get_target_property(_defs EngineTechDemo COMPILE_DEFINITIONS)
 message(STATUS "EngineTechDemo COMPILE_DEFINITIONS = ${_defs}")
 
@@ -102,11 +108,19 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/Levels")
     )
 endif()
 
-if(EXISTS "${CMAKE_SOURCE_DIR}/Project.manifest.json")
-    install(FILES "${CMAKE_SOURCE_DIR}/Project.manifest.json"
-        DESTINATION .
+# =======================================================================================
+# Remove Development information from manifest file, So every File path is resolved relative exe's dir.
+# =========================================================================================
+
+install(CODE "
+    execute_process(COMMAND ${CMAKE_COMMAND}
+        -DINPUT_FILE=\${CMAKE_CURRENT_SOURCE_DIR}/project.manifest.json
+        -DOUTPUT_FILE=\${CMAKE_INSTALL_PREFIX}/project.manifest.json
+        -P \"\${CMAKE_CURRENT_SOURCE_DIR}/CmakeScripts/StripManifest.cmake\"
     )
-endif()
+")
+
+#===================================================================================
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/Shaders")
     install(DIRECTORY "${CMAKE_SOURCE_DIR}/Shaders"
